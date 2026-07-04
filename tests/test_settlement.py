@@ -10,21 +10,32 @@ AI 활용 포인트:
 """
 
 import uuid
-from datetime import datetime, timedelta, timezone
-from decimal import Decimal
+# from datetime import datetime, timedelta, timezone
+# from decimal import Decimal
+
+
+# ... 기존에 있던 변수 선언(end_time = datetime(...) 등)이나 픽스처 코드들은 이 아래에 위치해야 합니다 ...
 
 import pytest
 from fastapi.testclient import TestClient
 
 # test_calculate_settlement_with_empty_period 함수 내부
-start_time = datetime(2000, 1, 1, tzinfo=timezone.utc)
-end_time = datetime(2000, 1, 31, tzinfo=timezone.utc)
+# start_time = datetime(2000, 1, 1, tzinfo=timezone.utc)
+# end_time = datetime(2000, 1, 31, tzinfo=timezone.utc)
 
+# 반드시 파일의 최상단(맨 위)으로 올려야 하는 코드들
+from datetime import datetime, timezone
 from settlement.main import app
 from settlement.models.models import Order, OrderStatus, SettlementStatus
 from settlement.services.settlement_service import SettlementService
 
-# ── 픽스처 ────────────────────────────────────────────────────────────
+
+start_time = datetime(2000, 1, 1, tzinfo=timezone.utc)
+end_time = datetime(2000, 1, 31, tzinfo=timezone.utc)
+
+
+import pytest
+from fastapi.testclient import TestClient
 
 
 @pytest.fixture
