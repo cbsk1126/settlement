@@ -28,12 +28,15 @@ jobs:
         # 실제 운영 의존성과 테스트/개발용 의존성을 모두 설치합니다.
         pip install -r requirements.txt
         pip install -r requirements-dev.txt
+        pip install ruff pytest
 
     - name: Run Linting (Flake8)
       run: |
         # src/settlement 디렉토리와 tests 디렉토리를 검사합니다.
-        flake8 src/settlement tests --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 src/settlement tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        # flake8 src/settlement tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        # flake8 src/settlement tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        ruff src/settlement tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        ruff src/settlement tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Run Unit Tests (Pytest)
       run: |
