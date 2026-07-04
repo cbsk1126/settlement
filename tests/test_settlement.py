@@ -258,8 +258,8 @@ def test_calculate_settlement_with_empty_period(service):
     (수정됨: start_date, end_date 파라미터를 start, end로 변경)
     """
     # Warning을 방지하기 위해 UTC를 명시한 최신 datetime 문법 사용
-    start_time = datetime(2000, 1, 1, tzinfo=UTC)
-    end_time = datetime(2000, 1, 31, tzinfo=UTC)
+    start_time = datetime(2000, 1, 1, tzinfo=timezone.utc)
+    end_time = datetime(2000, 1, 31, tzinfo=timezone.utc)
 
     # 메서드 호출 (에러가 났던 파라미터명 수정 완료)
     result = service.calculate_settlement(

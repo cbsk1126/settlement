@@ -35,8 +35,8 @@ jobs:
         # src/settlement 디렉토리와 tests 디렉토리를 검사합니다.
         # flake8 src/settlement tests --count --select=E9,F63,F7,F82 --show-source --statistics
         # flake8 src/settlement tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-        ruff check src/settlement tests --count --select=E9,F63,F7,F82 --show-source --statistics
-        ruff check src/settlement tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        ruff check src/settlement tests --output-format=github
+        ruff check src/settlement tests --output-format=github
 
     - name: Run Unit Tests (Pytest)
       run: |
