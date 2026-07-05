@@ -38,10 +38,10 @@ jobs:
       run: |
         echo "🔄 최신 이미지를 반영하기 위해 파드를 재시작합니다..."
         # ⚠️ deployment 이름이 'settlement-deployment'가 아니라면, 실제 파일에 적힌 metadata.name으로 수정해 주세요.
-        kubectl rollout restart deployment settlement-deployment
+        kubectl rollout restart deployment settlement
         
     # 4. 배포가 정상적으로 완료되었는지 상태를 확인합니다.
     - name: Verify Deployment Status
       run: |
         echo "✅ 배포 상태를 최종 점검합니다."
-        kubectl rollout status deployment settlement-deployment
+        kubectl rollout status deployment settlement
