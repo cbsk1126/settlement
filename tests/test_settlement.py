@@ -288,7 +288,7 @@ class TestAPI:
             "merchant_id": "M-API",
             "customer_id": "C-001",
             "amount": "75000",
-            "fee_rate": "0.03",
+            "fee_rate": "0.05",
             "status": "pending",
             "created_at": datetime.utcnow().isoformat(),
         }
