@@ -138,7 +138,7 @@ class TestSettlementService:
         rec = svc.calculate_settlement(merchant, start, end)
 
         expected_sales = sum(amounts)
-        expected_fee = sum(a * Decimal("0.03") for a in amounts)
+        expected_fee = sum(a * Decimal("0.05") for a in amounts)
 
         assert rec.order_count == 3
         assert rec.total_sales == expected_sales
