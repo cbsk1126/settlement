@@ -3,7 +3,7 @@ name: Settlement CD Pipeline
 # 앞서 만든 CI 워크플로우가 완료되었을 때 실행되도록 트리거를 설정합니다.
 on:
   workflow_run:
-    workflows: ["Settlement CI/CD Pipeline"] # ⚠️ 주의: ci.yml 파일 맨 위에 적힌 'name'과 정확히 똑같아야 합니다.
+    workflows: ["Settlement CI Pipeline"] # ⚠️ 주의: ci.yml 파일 맨 위에 적힌 'name'과 정확히 똑같아야 합니다.
     types:
       - completed
     branches:
